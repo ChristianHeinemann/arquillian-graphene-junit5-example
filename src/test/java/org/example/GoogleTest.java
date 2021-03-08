@@ -3,27 +3,27 @@ package org.example;
 import org.jboss.arquillian.container.test.api.RunAsClient;
 import org.jboss.arquillian.graphene.Graphene;
 import org.jboss.arquillian.graphene.page.Page;
-import org.jboss.arquillian.junit5.ArquillianExtension;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.jboss.arquillian.junit.Arquillian;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 
-@ExtendWith(ArquillianExtension.class)
+@RunWith(Arquillian.class)
 @RunAsClient
-class GoogleTest {
+public class GoogleTest {
 
     @Page
     GooglePage googlePage;
 
-    @BeforeEach
-    void openGoogle() {
+    @Before
+    public void openGoogle() {
         Graphene.goTo(GooglePage.class);
     }
 
     @Test
-    void testOpeningHomePage() {
+    public void testOpeningHomePage() {
         String pageTitle = googlePage.getTitle();
-        Assertions.assertEquals(pageTitle, "Google");
+        Assert.assertEquals(pageTitle, "Google");
     }
 }

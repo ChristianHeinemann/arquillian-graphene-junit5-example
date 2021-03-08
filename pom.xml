@@ -17,18 +17,11 @@
         <version.arquillian.drone>2.5.2</version.arquillian.drone>
         <version.arquillian.graphene>2.3.2</version.arquillian.graphene>
         <version.arquillian.selenium>3.13.0</version.arquillian.selenium>
-        <version.junit5>5.7.1</version.junit5>
+        <version.junit4>4.13.2</version.junit4>
     </properties>
 
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>org.junit</groupId>
-                <artifactId>junit-bom</artifactId>
-                <version>${version.junit5}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
             <dependency>
                 <groupId>org.jboss.arquillian</groupId>
                 <artifactId>arquillian-bom</artifactId>
@@ -55,13 +48,14 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${version.junit4}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.jboss.arquillian.junit5</groupId>
-            <artifactId>arquillian-junit5-container</artifactId>
+            <groupId>org.jboss.arquillian.junit</groupId>
+            <artifactId>arquillian-junit-container</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
